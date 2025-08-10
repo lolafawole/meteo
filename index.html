@@ -10,17 +10,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
   <body>
     <div class="weather-wrapper">
       <header>
-        <form action="search-engine" class="search-form-main">
+        <form action="search-engine" class="search-form-main" id="search-form">
           <input
             type="search"
             placeholder="Please enter a city.."
             required
             class="search-form-box"
+            id="search-input"
           />
           <input type="submit" value="search" class="search-form-button" />
         </form>
@@ -28,17 +30,19 @@
       <main>
         <div class="info-wrapper">
           <div>
-            <h1 class="weather-city">LANDAN</h1>
+            <h1 class="weather-city" id="weather-city"></h1>
             <p class="weather-detail">
-              Tuesday 14:49, scattered clouds
+              <span id="time"></span>
+              <span id="description"></span>
               <br />
-              Humidity: <strong>66%</strong>, Wind: <strong>3.13km/h</strong>
+              Humidity: <strong id="humidity"></strong>, Wind:
+              <strong id="wind-speed"></strong>
             </p>
           </div>
           <div class="temp-wrapper">
-            <div class="temp-icon">🌤️</div>
-            <div class="temp-value">12</div>
-            <div class="temp-unit">°C</div>
+            <div class="temp-icon" id="temp-icon">🌤️</div>
+            <div class="temp-value" id="temp-value"></div>
+            <div class="temp-unit" id="temp-unit">°C</div>
           </div>
         </div>
       </main>
@@ -49,5 +53,6 @@
         <a href="https://meteoicodes.netlify.app/">Netlify</a>
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
