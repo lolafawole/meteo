@@ -31,6 +31,11 @@ function refreshWeather(response) {
   let time = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
   time.innerHTML = dateFormatter(date);
+  let icon = document.querySelector("#temp-icon");
+  icon.innerHTML = `<img
+                src="${response.data.condition.icon_url}"
+                class="temp-icon"
+              />`;
 }
 
 function citySearch(city) {
